@@ -1,0 +1,29 @@
+﻿@model MovieDetails
+@using JE_PracticalTask.Models;
+
+<table>
+    <tbody>
+        <tr>
+            <td rowspan="5"><img src="@Model.Poster" alt="Poster of @Model.Title" /></td>
+            <th colspan="2">@Model.Title</th>
+        </tr>
+        <tr>
+            <td colspan="2">@Model.Year | @Model.Rated | @Model.Runtime</td>
+        </tr>
+        <tr>
+            <td>Director</td>
+            <td>@Model.Director</td>
+        </tr>
+        <tr>
+            <td>Writers</td>
+            <td>@Model.Writer</td>
+        </tr>
+        <tr>
+            <td>Actors</td>
+            <td>@Model.Actors</td>
+        </tr>
+        <tr>
+            <td colspan="3">@Model.Plot</td>
+        </tr>
+    </tbody>
+</table>

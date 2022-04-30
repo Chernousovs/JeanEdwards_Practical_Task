@@ -1,0 +1,15 @@
+﻿@model List<QueryHistory>
+@using JE_PracticalTask.Models;
+<table>
+    <tbody>
+
+        @foreach (var query in Model)
+        {
+            <tr>
+                <td>@query.QueryDateTime</td>
+                <td>@Html.ActionLink(query.QueryString, "Index", "Search", new { searchString = query.QueryString })</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

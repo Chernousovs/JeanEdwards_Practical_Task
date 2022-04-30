@@ -1,0 +1,18 @@
+﻿@model MovieSearchModel
+@using JE_PracticalTask.Models;
+
+<h3>Search Movies</h3>
+
+<section>
+    <div>
+        @using (Html.BeginForm("Index", "Search", "SearchString"))
+        {
+            @Html.Label("SearchString", "Type to search")
+            @Html.TextBox("SearchString")
+            <input type="submit" value="Movies" />
+        }
+    </div>
+</section>
+
+@await Html.PartialAsync("SearchResult", Model.Movies)
+

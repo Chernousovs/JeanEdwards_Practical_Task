@@ -1,0 +1,36 @@
+﻿@model List<MovieShortInfo>
+@using JE_PracticalTask.Models;
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+@if (Model != null && Model.Any())
+{
+    <table>
+        <tbody>
+            @foreach (var movie in Model)
+            {
+                <tr>
+                    <td rowspan="3"><img src="@movie.Poster" alt="Poster of @movie.Title" /></td>
+                    <td>@Html.ActionLink(movie.Title, "Details", "Movie", new { movie.ImdbId })</td>
+                </tr>
+                <tr>
+                    <td>@movie.Type</td>
+                </tr>
+                <tr>
+                    <td>@movie.Year</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
+
+@if (ViewBag.Information != null)
+{
+    <p>@ViewBag.Information</p>
+}
